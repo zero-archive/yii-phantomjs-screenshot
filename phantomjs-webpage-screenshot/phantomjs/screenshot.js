@@ -25,6 +25,7 @@ if (phantom.args.length != 4) {
         } else {
             window.setTimeout(function () {
                 page.render(outfile);
+                console.log('done');
                 phantom.exit();
             }, 200);
         }
