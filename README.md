@@ -10,16 +10,20 @@ Yii Framework 1.1.0 or later
 
 ## Installation:
 
-- Extract the release folder under `protected/extensions`
+- Extract the release folder `phantomjs-webpage-screenshot` under `protected/extensions`
 - Download and install [PhantomJS](http://phantomjs.org/) headless **WebKit** with **JavaScript API**
 - Add the following to your **config file** `components` section:
 
-      'screenshot' => array(
-          'class' => 'application.extensions.phantomjs-webpage-screenshot.WebpageScreenshot',
-          //'phantomjs' => '/bin/phantomjs',
-          //'width' => 640,
-          //'height' => 480,
-      ),
+```php
+<?php
+    //...
+    'screenshot' => array(
+        'class' => 'application.extensions.phantomjs-webpage-screenshot.WebpageScreenshot',
+        //'phantomjs' => '/bin/phantomjs',
+        //'width' => 640,
+        //'height' => 480,
+    ),
+```
 
 ## Usage:
 
