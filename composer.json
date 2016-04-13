@@ -1,0 +1,16 @@
+{
+    "name": "dotzero/yii-phantomjs-screenshot",
+    "description": "The Yii PhantomjsWebpageScreenshot extension that allows to generate screenshots of web pages on the fly",
+    "license": "MIT",
+    "keywords": ["yii", "extension", "behavior"],
+    "authors": [
+        {
+            "name": "dotzero",
+            "email": "mail@dotzero.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "yiisoft/yii": ">=1.1.13"
+    }
+}
