@@ -2,12 +2,14 @@
 /**
  * EWebpageScreenshot class file.
  *
- * @package YiiPhantomjsWebpageScreenshot
- * @author dZ <mail@dotzero.ru>
- * @link http://www.dotzero.ru
- * @link https://github.com/dotzero/YiiPhantomjsWebpageScreenshot
- * @license MIT
- * @version 1.0 (1-nov-2012)
+ * @package EWebpageScreenshot
+ * @version 1.0
+ * @author dotzero <mail@dotzero.ru>
+ * @link http://www.dotzero.ru/
+ * @link https://github.com/dotzero/yii-phantomjs-screenshot
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 /**
@@ -108,6 +110,7 @@ class EWebpageScreenshot extends CComponent
      * @param string $outfile the output format is automatically set based on the file extension.
      * Supported formats include: PNG | GIF | JPG |PDF
      * @return bool
+     * @throws EWebpageScreenshotException
      */
     public function capture($url, $outfile)
     {
@@ -122,9 +125,9 @@ class EWebpageScreenshot extends CComponent
 
         $output = $this->_execute($script, $args);
 
-        if($output === null OR preg_replace('/[\n\r]/', '', $output) !== 'done')
-        {
-            throw new EWebpageScreenshotException(EWebpageScreenshot::t('There was an error during capture web page'), self::STOP_CONTINUE);
+        if ($output === null OR preg_replace('/[\n\r]/', '', $output) !== 'done') {
+            throw new EWebpageScreenshotException(EWebpageScreenshot::t('There was an error during capture web page'),
+                self::STOP_CONTINUE);
         }
 
         return file_exists($outfile);
@@ -140,8 +143,7 @@ class EWebpageScreenshot extends CComponent
      */
     private function _execute($script, $argsString)
     {
-        if(!file_exists($this->_phantomjs) OR is_dir($this->_phantomjs))
-        {
+        if (!file_exists($this->_phantomjs) OR is_dir($this->_phantomjs)) {
             throw new EWebpageScreenshotException(EWebpageScreenshot::t('The PhantomJS executable "{path}" was not found.',
                 array('{path}' => $this->_phantomjs)
             ), self::STOP_CRITICAL);
@@ -162,19 +164,21 @@ class EWebpageScreenshot extends CComponent
      */
     public static function t($message, $params = array(), $source = 'webpagescreenshot')
     {
-        return Yii::t('EWebpageScreenshot.'.$source, $message, $params);
+        return Yii::t('EWebpageScreenshot.' . $source, $message, $params);
     }
 }
 
 /**
  * EWebpageScreenshotException represents a generic exception for EWebpageScreenshot class.
  *
- * @package YiiPhantomjsWebpageScreenshot
- * @author dZ <mail@dotzero.ru>
- * @link http://www.dotzero.ru
- * @link https://github.com/dotzero/YiiPhantomjsWebpageScreenshot
- * @license MIT
- * @version 1.0 (1-nov-2012)
+ * @package EWebpageScreenshot
+ * @version 1.0
+ * @author dotzero <mail@dotzero.ru>
+ * @link http://www.dotzero.ru/
+ * @link https://github.com/dotzero/yii-phantomjs-screenshot
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 class EWebpageScreenshotException extends Exception
 {

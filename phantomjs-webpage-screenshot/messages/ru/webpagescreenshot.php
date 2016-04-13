@@ -12,7 +12,7 @@
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
-return array (
+return array(
     'There was an error during capture web page' => 'Произошла ошибка в процессе захвата веб-сайта',
     'The PhantomJS executable "{path}" was not found.' => 'Исполняемый файл PhantomJS "{path}" не найден.',
 );

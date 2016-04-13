@@ -1,5 +1,8 @@
 # Yii Phantomjs WebpageScreenshot
 
+[![Latest Stable Version](https://poser.pugx.org/dotzero/yii-phantomjs-screenshot/version)](https://packagist.org/packages/dotzero/yii-phantomjs-screenshot)
+[![License](https://poser.pugx.org/dotzero/yii-phantomjs-screenshot/license)](https://packagist.org/packages/dotzero/yii-phantomjs-screenshot)
+
 The **Yii PhantomjsWebpageScreenshot** extension that allows to generate screenshots of web pages on the fly. It uses the headless webkit **PhantomJS** as a capture-engine.
 
 **PhantomJS** is a headless **WebKit** with **JavaScript API**. It has fast and native support for various web standards: DOM handling, CSS selector, JSON, Canvas, and SVG.
