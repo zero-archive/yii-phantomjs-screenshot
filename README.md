@@ -9,32 +9,48 @@ The **Yii PhantomjsWebpageScreenshot** extension that allows to generate screens
 
 ## Requirements:
 
-Yii Framework 1.1.0 or later
+- [Yii Framework](https://github.com/yiisoft/yii) 1.1.14 or above
+- [Composer](http://getcomposer.org/doc/)
 
-## Installation:
+## Install
 
-- Extract the release folder `phantomjs-webpage-screenshot` under `protected/extensions`
-- Download and install [PhantomJS](http://phantomjs.org/) headless **WebKit** with **JavaScript API**
-- Add the following to your **config file** `components` section:
+### Via composer:
+
+```bash
+$ composer require dotzero/yii-phantomjs-screenshot
+```
+
+### Add vendor path to your configuration file, attach component and set properties.
 
 ```php
-<?php
-    //...
+'aliases' => array(
+    ...
+    'vendor' => realpath(__DIR__ . '/../../vendor'),
+),
+'components' => array(
+    ...
     'screenshot' => array(
-        'class' => 'application.extensions.phantomjs-webpage-screenshot.WebpageScreenshot',
+        'class' => 'vendor.dotzero.yii-phantomjs-screenshot.EWebpageScreenshot',
         //'phantomjs' => '/bin/phantomjs',
         //'width' => 640,
         //'height' => 480,
     ),
+),
 ```
 
 ## Usage:
 
-    $screenshot = Yii::app()->screenshot;
-    $screenshot->width = 640;
-    $screenshot->height = 480;
+```php
+$screenshot = Yii::app()->screenshot;
+$screenshot->width = 640;
+$screenshot->height = 480;
 
-    $url = 'http://www.google.com';
-    $outfile = Yii::getPathOfAlias('application.runtime') . '/' . uniqid() . '.png';
+$url = 'http://www.google.com';
+$outfile = Yii::getPathOfAlias('application.runtime') . '/' . uniqid() . '.png';
 
-    $screenshot->capture($url, $outfile);
+$screenshot->capture($url, $outfile);
+```
+
+## License
+
+Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php

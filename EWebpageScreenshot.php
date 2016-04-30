@@ -17,15 +17,13 @@
  * It uses the headless webkit PhantomJS as a capture-engine.
  *
  * Requirements:
- * Yii Framework 1.1.0 or later
+ * Yii Framework 1.1.14 or above
  *
  * Installation:
- * - Extract the release folder under 'protected/extensions'
- * - Download and install PhantomJS (http://phantomjs.org/) headless WebKit with JavaScript API
  * - Add the following to your config file 'components' section:
  *
  *     'screenshot' => array(
- *         'class' => 'application.extensions.phantomjs-webpage-screenshot.EWebpageScreenshot',
+ *         'class' => 'vendor.dotzero.yii-phantomjs-screenshot.EWebpageScreenshot',
  *         #'phantomjs' => '/bin/phantomjs',
  *         #'width' => 640,
  *         #'height' => 480,
